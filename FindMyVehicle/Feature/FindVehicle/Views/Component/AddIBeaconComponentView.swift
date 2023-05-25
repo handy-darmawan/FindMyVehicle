@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddIBeaconView: View {
+struct AddIBeaconComponentView: View {
     @ObservedObject var homeVM: HomeViewModel
     
     var body: some View {
@@ -38,7 +38,21 @@ struct AddIBeaconView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         homeVM.addIBeacon()
-                        homeVM.isAddButtonClicked = false
+                        
+                        if homeVM.isIBeaconDataWrong == false {
+                            homeVM.isAddButtonClicked = false
+                        }
+                    }
+                    .alert(isPresented: $homeVM.isIBeaconDataWrong) {
+                        Alert (
+                            title: Text("Wrong IBeacon Data"),
+                            message: Text("Please check the IBeacon UUID, Major, Minor"),
+                            dismissButton: .default(
+                                Text("OK"),action: {
+                                    homeVM.isAddButtonClicked = false
+                                }
+                            )
+                        )
                     }
                 }
             }
@@ -48,6 +62,6 @@ struct AddIBeaconView: View {
 
 struct AddIBeaconView_Previews: PreviewProvider {
     static var previews: some View {
-        AddIBeaconView(homeVM: HomeViewModel())
+        AddIBeaconComponentView(homeVM: HomeViewModel())
     }
 }

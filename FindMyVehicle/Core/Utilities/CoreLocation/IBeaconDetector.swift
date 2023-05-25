@@ -11,16 +11,23 @@ import SwiftUI
 class IBeaconDetector: NSObject, CLLocationManagerDelegate, ObservableObject {
     private var locationManager = CLLocationManager()
     
+    //MARK: IBeacon
     @Published var lastDistance = CLProximity.unknown
-    @Published var accuracy: CLLocationAccuracy = -1.0
-
+    @Published var accuracy: CLLocationAccuracy = 0.0
     @Published var item: IBeaconModel = IBeaconModel(uuid: UUID(uuidString: "C9616ADC-E4F3-4DC5-892E-86174E0CB0E6")!, name: "", major: 222, minor: 156)
+
+    //MARK: Location
+    @Published var lastLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    
     
     override init() {
         super.init()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -50,18 +57,29 @@ class IBeaconDetector: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        if let beacon = beacons.first {
-            lastDistance = beacon.proximity
-            accuracy = beacon.accuracy
-        }
-        else {
-            lastDistance = .unknown
-            accuracy = -1.0
+        
+        DispatchQueue.main.async {
+            if let beacon = beacons.first {
+                self.lastDistance = beacon.proximity
+                self.accuracy = beacon.accuracy
+            }
+            else {
+                self.lastDistance = .unknown
+                self.accuracy = 0.0
+            }
+            
         }
         
-        print("\n")
-        print("Updated LastDistance \(lastDistance)")
-        print("Updated Accuracy \(accuracy)")
-        print(item.uuid.uuidString)
+//        print("\n")
+//        print("Updated LastDistance \(self.lastDistance)")
+//        print("Updated Accuracy \(self.accuracy)")
+//        print(item.uuid.uuidString)
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.lastLocation = locationManager.location!.coordinate
+//        print(lastLocation.longitude)
+//        print(lastLocation.latitude)
+    }
+    
 }

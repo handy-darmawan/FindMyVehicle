@@ -19,7 +19,7 @@ struct TextFieldComponentView: View {
             
             TextField(placeholder, text: $answer)
                 .padding(.horizontal, 15)
-                .keyboardType((title.contains("Minor") || title.contains("Minor")) ? .numberPad : .default)
+                .keyboardType((title.contains("Major") || title.contains("Minor")) ? .numberPad : .default)
                 .overlay {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.gray.opacity(0.9), lineWidth: 2)

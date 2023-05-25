@@ -7,7 +7,7 @@
 
 import Foundation
 
-class IBeaconViewModel: ObservableObject {
+class IBeaconViewModel: ObservableObject, Identifiable {
     @Published var newIBeacon = IBeaconModel(uuid: UUID(), name: "", major: 0, minor: 0)
     
     @Published var uuid: String = ""

@@ -9,33 +9,40 @@ import SwiftUI
 
 struct TrackView: View {
 
-//    @StateObject var iBeaconDetector = IBeaconDetector()
     @ObservedObject var homeVM: HomeViewModel
+    
     var body: some View {
         VStack {
-            switch homeVM.detector.lastDistance {
-            case .unknown:
-                Text("Out of area")
-            case .far:
-                Text("Far")
-            case .near:
-                Text("Near")
-            case .immediate:
-                Text("Close to you")
-            @unknown default:
-                Text("Out of area")
-            }
+            Text(homeVM.currentContentItem.name)
+                .font(.largeTitle)
+                .padding(.top, 40)
+                .padding(.bottom, -20)
 
+            //MARK: Signal Strength
+            SignalStrengthComponentView(homeVM: homeVM)
             
-            Text("\(homeVM.detector.item.uuid.uuidString)")
-            Text(String(format:"Accuracy: %0.2f", homeVM.detector.accuracy))
             
+            Button("Done") {
+                //set the location to empty
+                homeVM.lastLocation.latitude = 0
+                homeVM.lastLocation.longitude = 0
+            }
+            .buttonStyle(.borderedProminent)
+
+        }
+        .vAlign(.top)
+        .onReceive(homeVM.timer) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                withAnimation(.easeIn(duration: 0.2)) {
+                    homeVM.objectWillChange.send()
+                }
+            }
         }
     }
 }
 
-//struct TrackVIew_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TrackView(iBeaconData: IBeaconModel(uuid: UUID(), name: "hi", major: 12, minor: 12))
-//    }
-//}
+struct Trackview_Previews: PreviewProvider {
+    static var previews: some View {
+        TrackView(homeVM: HomeViewModel())
+    }
+}

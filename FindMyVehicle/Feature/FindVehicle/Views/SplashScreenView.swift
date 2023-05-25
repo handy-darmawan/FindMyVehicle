@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SplashScreenView: View {
-    @State private var scaling = 0.7
-    @State private var opacity = 0.9
-
+    @ObservedObject var homeVM: HomeViewModel
+    
     var body: some View {
         VStack {
             VStack {
@@ -18,22 +17,23 @@ struct SplashScreenView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150)
-                Text("Find your vehicle")
+                Text("Find My Vehicle")
                     .font(.largeTitle)
             }
-            .scaleEffect(scaling)
-            .opacity(opacity)
+            .scaleEffect(homeVM.scaling)
+            .opacity(homeVM.opacity)
             .onAppear {
                 withAnimation(.easeIn(duration: 1.4)) {
-                    self.opacity = 1
-                    self.scaling = 0.9
+                    homeVM.opacity = 1
+                    homeVM.scaling = 0.9
                 }
             }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation(.easeOut(duration: 0.6)) {
-//                    HomeView()
+                    //Show HomeView
+                    homeVM.isSplashScreenShown = false
                 }
             }
         }
