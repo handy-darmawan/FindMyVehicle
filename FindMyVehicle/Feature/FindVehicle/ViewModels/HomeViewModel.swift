@@ -37,7 +37,6 @@ class HomeViewModel: ObservableObject {
     ]
     
     func fillIBeaconData(iBeaconCoreData: FetchedResults<IBeaconEntity>) {
-        
         //clear all array
         deleteAllIBeaconData()
 
@@ -48,10 +47,10 @@ class HomeViewModel: ObservableObject {
             iBeaconVM.newIBeacon.minor = Int(data.iBeaconMinor)
             iBeaconVM.newIBeacon.name = data.iBeaconName!
             iBeaconVM.newIBeacon.uuid = data.iBeaconUUID!
-
+            
             ibeaconData.append(iBeaconVM.newIBeacon)
+            print("UUID from CoreData -> \(iBeaconVM.uuid)")
         }
-        print(ibeaconData.count)
     }
     
     func deleteAllIBeaconData() {
@@ -75,27 +74,33 @@ class HomeViewModel: ObservableObject {
             coreDM.addIBeacon(iBeaconModel: iBeaconVM.newIBeacon,
                               context: moc)
         }
+
+        //clear data from textfield
+        clearTextField()
     }
     
     func deleteIBeacon(item: IBeaconModel, iBeaconCoreData: FetchedResults<IBeaconEntity>) {
-        
         let itemUUID = item.uuid
         
-        print(itemUUID)
         //delete from coredata
         for data in iBeaconCoreData {
             if data.iBeaconUUID == itemUUID {
                 coreDM.deleteIBeacon(currIBeacon: data, context: moc)
-                
                 break;
             }
         }
-        
-        //delete from arrays using delete all array and fill it again
-//        fillIBeaconData(iBeaconCoreData: iBeaconCoreData)
+            
+        //delete from array
         if let index = self.ibeaconData.firstIndex(of: item) {
             ibeaconData.remove(at: index)
         }
+    }
+    
+    func clearTextField() {
+        iBeaconVM.major = ""
+        iBeaconVM.minor = ""
+        iBeaconVM.uuid = ""
+        iBeaconVM.name = ""
     }
     
     
@@ -125,6 +130,7 @@ class HomeViewModel: ObservableObject {
         let lastLocation = CLLocation(latitude: lastLocation.latitude, longitude: lastLocation.longitude)
         let currentLocation = CLLocation(latitude: detector.lastLocation.latitude, longitude: detector.lastLocation.longitude)
         
+        print(lastLocation.distance(from: currentLocation))
         return lastLocation.distance(from: currentLocation)
     }
 

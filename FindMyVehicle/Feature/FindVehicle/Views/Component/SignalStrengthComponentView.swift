@@ -47,7 +47,7 @@ struct SignalStrengthComponentView: View {
                     .foregroundColor(homeVM.rangeOfSignal().2)
                     .padding(.top, 5)
                 
-                Text(String(format:"You are %.0fm away from your vehicle", (homeVM.detector.accuracy == -1.0) ? homeVM.countLocationDistance() : homeVM.detector.accuracy))
+                Text(String(format:"You are %.0fm away from your vehicle", (homeVM.detector.accuracy <= 0.0) ? homeVM.countLocationDistance() : homeVM.detector.accuracy))
                     .padding(.top, 30)
             }
         }

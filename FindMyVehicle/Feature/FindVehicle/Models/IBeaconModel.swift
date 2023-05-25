@@ -13,4 +13,12 @@ struct IBeaconModel: Identifiable, Equatable {
     var name: String
     var major: Int
     var minor: Int
+    
+    init(uuid: UUID, name: String, major: Int, minor: Int) {
+        self.id = UUID()
+        self.uuid = uuid
+        self.name = name
+        self.major = major
+        self.minor = minor
+    }
 }

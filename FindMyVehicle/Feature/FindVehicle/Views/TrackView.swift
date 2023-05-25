@@ -24,12 +24,12 @@ struct TrackView: View {
             //MARK: Signal Strength
             SignalStrengthComponentView(homeVM: homeVM)
             
-            Button("Done") {
-                //set the location to empty
-                homeVM.lastLocation.latitude = 0
-                homeVM.lastLocation.longitude = 0
-            }
-            .buttonStyle(.borderedProminent)
+//            Button("Done") {
+//                //set the location to empty
+//                homeVM.lastLocation.latitude = 0
+//                homeVM.lastLocation.longitude = 0
+//            }
+//            .buttonStyle(.borderedProminent)
         }
         .vAlign(.top)
         .onReceive(homeVM.timer) { _ in

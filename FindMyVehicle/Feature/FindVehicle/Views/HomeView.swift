@@ -53,16 +53,15 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            homeVM.fillIBeaconData(iBeaconCoreData: iBeaconCoreData)
-            homeVM.coreDM = coreDM
-            homeVM.moc = moc
+            DispatchQueue.main.async {
+                homeVM.fillIBeaconData(iBeaconCoreData: iBeaconCoreData)
+                homeVM.coreDM = coreDM
+                homeVM.moc = moc
+            }
+//            //testing to clear all coredata
+//            homeVM.coreDM.deleteBatchIBeacon()
             
-            //testing to clear all coredata
-            homeVM.coreDM.deleteBatchIBeacon()
         }
-//        .onChange(of: homeVM.ibeaconData) { _ in
-//            homeVM.fillIBeaconData(iBeaconCoreData: iBeaconCoreData)
-//        }
     }
 }
 

@@ -16,15 +16,13 @@ struct IBeaconComponentView: View {
         ScrollView(showsIndicators: false) {
             if homeVM.ibeaconData.count != 0 {
                 LazyVGrid(columns: homeVM.gridColumn) {
-                    ForEach(homeVM.ibeaconData, id: \.id) { item in
-                        
+                    ForEach(homeVM.ibeaconData.indices, id: \.self) { idx in
+                        let item = homeVM.ibeaconData[idx]
                         VStack(alignment: .leading) {
                             NavigationLink(destination: TrackView(homeVM: homeVM, item: item, iBeaconCoreData: iBeaconCoreData)) {
                                 Text(item.name)
                                     .foregroundColor(.white)
                                     .frame(width: 170, height: 130)
-                                Text(item.uuid.uuidString.suffix(2))
-//                                Text(item.id.uudi)
                             }
                             .simultaneousGesture(TapGesture().onEnded{
                                 
@@ -66,9 +64,3 @@ struct IBeaconComponentView: View {
         .background(.gray.opacity(0.2))
     }
 }
-
-//struct IBeaconComponentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        IBeaconComponentView(homeVM: HomeViewModel())
-//    }
-//}
