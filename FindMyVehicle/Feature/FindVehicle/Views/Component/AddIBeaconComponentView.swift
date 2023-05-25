@@ -38,6 +38,7 @@ struct AddIBeaconComponentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         homeVM.addIBeacon()
+                        print(homeVM.ibeaconData[0].uuid.uuidString)
                         
                         if homeVM.isIBeaconDataWrong == false {
                             homeVM.isAddButtonClicked = false

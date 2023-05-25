@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct IBeaconModel: Identifiable {
+struct IBeaconModel: Identifiable, Equatable {
     var id = UUID()
     var uuid: UUID
     var name: String

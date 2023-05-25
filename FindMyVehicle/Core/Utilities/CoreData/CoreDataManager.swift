@@ -37,6 +37,7 @@ class CoreDataManager: ObservableObject {
         newIBeacon.iBeaconMajor = Int32(iBeaconModel.major)
         newIBeacon.iBeaconMinor = Int32(iBeaconModel.minor)
             
+        print("uuid when added: \(newIBeacon.iBeaconUUID!.uuidString)")
         save(context: context)
     }
     

@@ -11,7 +11,7 @@ import CoreData
 struct HomeView: View {
     @StateObject var homeVM = HomeViewModel()
     @ObservedObject var coreDM: CoreDataManager
-    
+
     //MARK: CoreData
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: IBeaconEntity.entity(), sortDescriptors: []) var iBeaconCoreData: FetchedResults<IBeaconEntity>
@@ -58,8 +58,11 @@ struct HomeView: View {
             homeVM.moc = moc
             
             //testing to clear all coredata
-            homeVM.deleteAllIBeaconData()
+            homeVM.coreDM.deleteBatchIBeacon()
         }
+//        .onChange(of: homeVM.ibeaconData) { _ in
+//            homeVM.fillIBeaconData(iBeaconCoreData: iBeaconCoreData)
+//        }
     }
 }
 

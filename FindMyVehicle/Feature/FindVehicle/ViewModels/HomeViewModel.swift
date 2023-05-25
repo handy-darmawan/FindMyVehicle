@@ -37,6 +37,7 @@ class HomeViewModel: ObservableObject {
     ]
     
     func fillIBeaconData(iBeaconCoreData: FetchedResults<IBeaconEntity>) {
+        
         //clear all array
         deleteAllIBeaconData()
 
@@ -50,11 +51,11 @@ class HomeViewModel: ObservableObject {
 
             ibeaconData.append(iBeaconVM.newIBeacon)
         }
+        print(ibeaconData.count)
     }
     
     func deleteAllIBeaconData() {
         ibeaconData.removeAll()
-        coreDM.deleteBatchIBeacon()
     }
     
     func addIBeacon() {
@@ -62,7 +63,7 @@ class HomeViewModel: ObservableObject {
             self.isIBeaconDataWrong = true
         }
         else  {
-            iBeaconVM.newIBeacon.id = UUID(uuidString: iBeaconVM.uuid)!
+            iBeaconVM.newIBeacon.uuid = UUID(uuidString: iBeaconVM.uuid)!
             iBeaconVM.newIBeacon.major = Int(iBeaconVM.major)!
             iBeaconVM.newIBeacon.minor = Int(iBeaconVM.minor)!
             iBeaconVM.newIBeacon.name = iBeaconVM.name
@@ -76,8 +77,25 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    func deleteIBeacon(currentIBeacon: NSManagedObject) {
-        coreDM.deleteIBeacon(currIBeacon: currentIBeacon, context: moc)
+    func deleteIBeacon(item: IBeaconModel, iBeaconCoreData: FetchedResults<IBeaconEntity>) {
+        
+        let itemUUID = item.uuid
+        
+        print(itemUUID)
+        //delete from coredata
+        for data in iBeaconCoreData {
+            if data.iBeaconUUID == itemUUID {
+                coreDM.deleteIBeacon(currIBeacon: data, context: moc)
+                
+                break;
+            }
+        }
+        
+        //delete from arrays using delete all array and fill it again
+//        fillIBeaconData(iBeaconCoreData: iBeaconCoreData)
+        if let index = self.ibeaconData.firstIndex(of: item) {
+            ibeaconData.remove(at: index)
+        }
     }
     
     
@@ -109,5 +127,6 @@ class HomeViewModel: ObservableObject {
         
         return lastLocation.distance(from: currentLocation)
     }
+
 
 }

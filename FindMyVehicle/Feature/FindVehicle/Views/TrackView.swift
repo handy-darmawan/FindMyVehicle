@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct TrackView: View {
-
+    @Environment(\.dismiss) var dismissPage
+    
     @ObservedObject var homeVM: HomeViewModel
+    var item: IBeaconModel
+    var iBeaconCoreData: FetchedResults<IBeaconEntity>
     
     var body: some View {
         VStack {
@@ -21,14 +24,12 @@ struct TrackView: View {
             //MARK: Signal Strength
             SignalStrengthComponentView(homeVM: homeVM)
             
-            
             Button("Done") {
                 //set the location to empty
                 homeVM.lastLocation.latitude = 0
                 homeVM.lastLocation.longitude = 0
             }
             .buttonStyle(.borderedProminent)
-
         }
         .vAlign(.top)
         .onReceive(homeVM.timer) { _ in
@@ -38,11 +39,17 @@ struct TrackView: View {
                 }
             }
         }
-    }
-}
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Delete") {
+                    //back to home view
+                    self.dismissPage()
 
-struct Trackview_Previews: PreviewProvider {
-    static var previews: some View {
-        TrackView(homeVM: HomeViewModel())
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        homeVM.deleteIBeacon(item: item, iBeaconCoreData: iBeaconCoreData)
+                    }
+                }
+            }
+        }
     }
 }
