@@ -43,7 +43,6 @@ class CoreDataManager: ObservableObject {
     
     func deleteIBeacon(currIBeacon: NSManagedObject, context: NSManagedObjectContext) {
         container.viewContext.delete(currIBeacon)
-//        context.delete(currIBeacon)
         save(context: context)
     }
     

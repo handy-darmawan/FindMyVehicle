@@ -69,10 +69,10 @@ class IBeaconDetector: NSObject, CLLocationManagerDelegate, ObservableObject {
             
         }
         
-        print("\n")
-        print("Updated LastDistance \(self.lastDistance)")
-        print("Updated Accuracy \(self.accuracy)")
-        print(item.uuid.uuidString)
+//        print("\n")
+//        print("Updated LastDistance \(self.lastDistance)")
+//        print("Updated Accuracy \(self.accuracy)")
+//        print(item.uuid.uuidString)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

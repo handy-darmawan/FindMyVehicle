@@ -110,7 +110,6 @@ class HomeViewModel: ObservableObject {
     @Published var lastLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
     
-    
     func rangeOfSignal() -> (Int, String, Color) {
         switch detector.lastDistance {
         case .immediate:
