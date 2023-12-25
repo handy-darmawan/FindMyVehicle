@@ -14,7 +14,6 @@ struct VehicleModel: Identifiable {
     var longitude: Double
 }
 
-//dd
 //map to entity
 extension VehicleModel {
     func toEntity() -> Vehicle {
