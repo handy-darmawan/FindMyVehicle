@@ -14,7 +14,7 @@ class CoreDataManager {
     static let shared = CoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Vehicle")
+        let container = NSPersistentContainer(name: "VehicleCoreData")
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Error: \(error.localizedDescription)")
@@ -38,7 +38,7 @@ class CoreDataManager {
 
 extension CoreDataManager: CoreDataProtocol {
     func addVehicleLocation(vehicle: VehicleModel) {
-        var newVehicle = vehicle.toEntity()
+        let _ = vehicle.toEntity(context: context)
         saveContext()
     }
     
