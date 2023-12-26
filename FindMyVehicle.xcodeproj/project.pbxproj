@@ -11,13 +11,20 @@
 		806BD0DD2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */; };
 		806BD0DF2B3890420099B6DE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0DE2B3890420099B6DE /* HomeViewModel.swift */; };
 		806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0E02B38957F0099B6DE /* VehicleModel.swift */; };
+		8070C2332B39AFFE00B91A83 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070C2322B39AFFE00B91A83 /* HistoryView.swift */; };
 		8082C05B2B35820E00BF38B6 /* FindMyVehicleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082C05A2B35820E00BF38B6 /* FindMyVehicleApp.swift */; };
 		8082C05D2B35820E00BF38B6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082C05C2B35820E00BF38B6 /* HomeView.swift */; };
 		8082C05F2B35820F00BF38B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8082C05E2B35820F00BF38B6 /* Assets.xcassets */; };
 		8082C0622B35820F00BF38B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8082C0612B35820F00BF38B6 /* Preview Assets.xcassets */; };
 		8082C0742B35CB5100BF38B6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082C0732B35CB5100BF38B6 /* CoreDataManager.swift */; };
-		8082C0772B35D2F300BF38B6 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8082C0752B35D2F300BF38B6 /* CoreDataModel.xcdatamodeld */; };
+		8082C0772B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8082C0752B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld */; };
 		8082C07A2B35D79600BF38B6 /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082C0792B35D79600BF38B6 /* CoreLocationManager.swift */; };
+		80D0BECD2B3B114A0027CC3A /* TabEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BECC2B3B114A0027CC3A /* TabEnum.swift */; };
+		80D0BECF2B3B129D0027CC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BECE2B3B129D0027CC3A /* AppDelegate.swift */; };
+		80D0BED12B3B12A10027CC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED02B3B12A10027CC3A /* SceneDelegate.swift */; };
+		80D0BED32B3B14810027CC3A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED22B3B14810027CC3A /* CustomTabBar.swift */; };
+		80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */; };
+		80D0BED72B3B1C920027CC3A /* VehicleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */; };
 		80FD0A942B392CC9006C5709 /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD0A932B392CC9006C5709 /* CoreDataProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +33,7 @@
 		806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKitView+UIRepresentable.swift"; sourceTree = "<group>"; };
 		806BD0DE2B3890420099B6DE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		806BD0E02B38957F0099B6DE /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
+		8070C2322B39AFFE00B91A83 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		8082C0572B35820E00BF38B6 /* FindMyVehicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyVehicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8082C05A2B35820E00BF38B6 /* FindMyVehicleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyVehicleApp.swift; sourceTree = "<group>"; };
 		8082C05C2B35820E00BF38B6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -35,6 +43,12 @@
 		8082C0762B35D2F300BF38B6 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		8082C0792B35D79600BF38B6 /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		8082C07B2B35DE6400BF38B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		80D0BECC2B3B114A0027CC3A /* TabEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabEnum.swift; sourceTree = "<group>"; };
+		80D0BECE2B3B129D0027CC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80D0BED02B3B12A10027CC3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		80D0BED22B3B14810027CC3A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabView+TabSheet.swift"; sourceTree = "<group>"; };
+		80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRowView.swift; sourceTree = "<group>"; };
 		80FD0A932B392CC9006C5709 /* CoreDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,8 +68,33 @@
 			children = (
 				8023F6972B370B3200F3EED2 /* MapKitView.swift */,
 				806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */,
+				80D0BED22B3B14810027CC3A /* CustomTabBar.swift */,
+				80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */,
+				80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		8070C22F2B39AF9400B91A83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8070C2302B39AF9900B91A83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8070C2322B39AFFE00B91A83 /* HistoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8070C2312B39AF9D00B91A83 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8082C04E2B35820E00BF38B6 = {
@@ -83,6 +122,8 @@
 				8082C06C2B35970F00BF38B6 /* Data */,
 				8082C06B2B35891200BF38B6 /* Presenter */,
 				8082C05A2B35820E00BF38B6 /* FindMyVehicleApp.swift */,
+				80D0BECE2B3B129D0027CC3A /* AppDelegate.swift */,
+				80D0BED02B3B12A10027CC3A /* SceneDelegate.swift */,
 				8082C05E2B35820F00BF38B6 /* Assets.xcassets */,
 				8082C0602B35820F00BF38B6 /* Preview Content */,
 			);
@@ -110,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				806BD0E02B38957F0099B6DE /* VehicleModel.swift */,
+				80D0BECC2B3B114A0027CC3A /* TabEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				8082C0712B35A8A700BF38B6 /* Home */,
-				8082C0702B35A8A600BF38B6 /* Detail */,
+				8082C0702B35A8A600BF38B6 /* History */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -155,11 +197,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		8082C0702B35A8A600BF38B6 /* Detail */ = {
+		8082C0702B35A8A600BF38B6 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				8070C2312B39AF9D00B91A83 /* ViewModel */,
+				8070C2302B39AF9900B91A83 /* View */,
+				8070C22F2B39AF9400B91A83 /* Model */,
 			);
-			path = Detail;
+			path = History;
 			sourceTree = "<group>";
 		};
 		8082C0712B35A8A700BF38B6 /* Home */ = {
@@ -176,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				8082C0732B35CB5100BF38B6 /* CoreDataManager.swift */,
-				8082C0752B35D2F300BF38B6 /* CoreDataModel.xcdatamodeld */,
+				8082C0752B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -260,14 +305,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				80FD0A942B392CC9006C5709 /* CoreDataProtocol.swift in Sources */,
+				80D0BED32B3B14810027CC3A /* CustomTabBar.swift in Sources */,
+				80D0BED12B3B12A10027CC3A /* SceneDelegate.swift in Sources */,
 				8023F6982B370B3200F3EED2 /* MapKitView.swift in Sources */,
 				806BD0DD2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift in Sources */,
 				8082C0742B35CB5100BF38B6 /* CoreDataManager.swift in Sources */,
 				806BD0DF2B3890420099B6DE /* HomeViewModel.swift in Sources */,
+				8070C2332B39AFFE00B91A83 /* HistoryView.swift in Sources */,
 				8082C05D2B35820E00BF38B6 /* HomeView.swift in Sources */,
 				8082C07A2B35D79600BF38B6 /* CoreLocationManager.swift in Sources */,
-				8082C0772B35D2F300BF38B6 /* CoreDataModel.xcdatamodeld in Sources */,
+				80D0BECF2B3B129D0027CC3A /* AppDelegate.swift in Sources */,
+				8082C0772B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld in Sources */,
+				80D0BED72B3B1C920027CC3A /* VehicleRowView.swift in Sources */,
+				80D0BECD2B3B114A0027CC3A /* TabEnum.swift in Sources */,
 				806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */,
+				80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */,
 				8082C05B2B35820E00BF38B6 /* FindMyVehicleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,13 +546,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8082C0752B35D2F300BF38B6 /* CoreDataModel.xcdatamodeld */ = {
+		8082C0752B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				8082C0762B35D2F300BF38B6 /* CoreDataModel.xcdatamodel */,
 			);
 			currentVersion = 8082C0762B35D2F300BF38B6 /* CoreDataModel.xcdatamodel */;
-			path = CoreDataModel.xcdatamodeld;
+			path = VehicleCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

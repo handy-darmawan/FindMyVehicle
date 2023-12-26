@@ -46,6 +46,7 @@ extension MapKitView {
     func setCurrentLocation(with location: CLLocationCoordinate2D) {
         region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         mapView.setRegion(region, animated: true)
+        
     }
 }
 
