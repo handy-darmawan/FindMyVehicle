@@ -15,7 +15,7 @@ struct HistoryView: View {
         VStack {
             if homeVM.vehicles.isEmpty {
                 Text("No History")
-                    .font(.title2.bold())
+                    .font(.title2)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
             else {
@@ -23,8 +23,8 @@ struct HistoryView: View {
                     ForEach(homeVM.vehicles, id: \.id) { vehicle in
                         HStack {
                             Image(systemName: "car.fill")
-                                .font(.system(size: 50))
-                                .foregroundColor(.blue)
+                                .font(.title2)
+                                .background(.background, in: Circle())
                             
                             Text(vehicle.name)
                                 .font(.title2.bold())
@@ -41,7 +41,6 @@ struct HistoryView: View {
         .padding()
         .onAppear {
             homeVM.fetchVehicles()
-            print(homeVM.activeTab)
         }
     }
 }

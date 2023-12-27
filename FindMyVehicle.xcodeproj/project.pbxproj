@@ -26,6 +26,8 @@
 		80D0BED32B3B14810027CC3A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED22B3B14810027CC3A /* CustomTabBar.swift */; };
 		80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */; };
 		80D0BED72B3B1C920027CC3A /* VehicleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */; };
+		80DAFA192B3C5FF30005A51F /* HomeView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DAFA182B3C5FF30005A51F /* HomeView+Extensions.swift */; };
+		80DAFA1B2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DAFA1A2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift */; };
 		80FD0A942B392CC9006C5709 /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD0A932B392CC9006C5709 /* CoreDataProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		80D0BED22B3B14810027CC3A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabView+TabSheet.swift"; sourceTree = "<group>"; };
 		80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRowView.swift; sourceTree = "<group>"; };
+		80DAFA182B3C5FF30005A51F /* HomeView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Extensions.swift"; sourceTree = "<group>"; };
+		80DAFA1A2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+ToolbarItemExtensions.swift"; sourceTree = "<group>"; };
 		80FD0A932B392CC9006C5709 /* CoreDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,8 @@
 				80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */,
 				80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */,
 				80115F0C2B3C1327002AEB3B /* VerticalScrollView+Geometry.swift */,
+				80DAFA182B3C5FF30005A51F /* HomeView+Extensions.swift */,
+				80DAFA1A2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 				8023F6982B370B3200F3EED2 /* MapKitView.swift in Sources */,
 				806BD0DD2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift in Sources */,
 				8082C0742B35CB5100BF38B6 /* CoreDataManager.swift in Sources */,
+				80DAFA1B2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift in Sources */,
 				806BD0DF2B3890420099B6DE /* HomeViewModel.swift in Sources */,
 				8070C2332B39AFFE00B91A83 /* HistoryView.swift in Sources */,
 				8082C05D2B35820E00BF38B6 /* HomeView.swift in Sources */,
@@ -304,6 +311,7 @@
 				80D0BECF2B3B129D0027CC3A /* AppDelegate.swift in Sources */,
 				8082C0772B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld in Sources */,
 				80D0BED72B3B1C920027CC3A /* VehicleRowView.swift in Sources */,
+				80DAFA192B3C5FF30005A51F /* HomeView+Extensions.swift in Sources */,
 				80D0BECD2B3B114A0027CC3A /* TabEnum.swift in Sources */,
 				806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */,
 				80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */,
