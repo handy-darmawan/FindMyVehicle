@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80115F0D2B3C1327002AEB3B /* VerticalScrollView+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80115F0C2B3C1327002AEB3B /* VerticalScrollView+Geometry.swift */; };
 		8023F6982B370B3200F3EED2 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023F6972B370B3200F3EED2 /* MapKitView.swift */; };
 		806BD0DD2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */; };
 		806BD0DF2B3890420099B6DE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0DE2B3890420099B6DE /* HomeViewModel.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80115F0C2B3C1327002AEB3B /* VerticalScrollView+Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerticalScrollView+Geometry.swift"; sourceTree = "<group>"; };
 		8023F6972B370B3200F3EED2 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
 		806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKitView+UIRepresentable.swift"; sourceTree = "<group>"; };
 		806BD0DE2B3890420099B6DE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				80D0BED22B3B14810027CC3A /* CustomTabBar.swift */,
 				80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */,
 				80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */,
+				80115F0C2B3C1327002AEB3B /* VerticalScrollView+Geometry.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */,
 				80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */,
 				8082C05B2B35820E00BF38B6 /* FindMyVehicleApp.swift in Sources */,
+				80115F0D2B3C1327002AEB3B /* VerticalScrollView+Geometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

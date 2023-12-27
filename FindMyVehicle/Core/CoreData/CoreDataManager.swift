@@ -69,5 +69,16 @@ extension CoreDataManager: CoreDataProtocol {
         }
     }
     
+    func deleteBatch() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vehicle")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(batchDeleteRequest)
+        }
+        catch {
+            print("Error: \(error.localizedDescription)")
+        }
+    }
     
 }
