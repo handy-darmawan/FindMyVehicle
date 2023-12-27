@@ -7,8 +7,10 @@
 
 
 import SwiftUI
+import CoreLocation
 
 struct VehicleRowView: View {
+    @EnvironmentObject var homeVM: HomeViewModel
     let vehicle: VehicleModel
     
     var body: some View {
@@ -24,7 +26,7 @@ struct VehicleRowView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text("X km")
+            Text(vehicle.getDistance(from: homeVM.coreLocationManager.location) + " m")
                 .font(.callout)
                 .foregroundColor(.gray)
         }

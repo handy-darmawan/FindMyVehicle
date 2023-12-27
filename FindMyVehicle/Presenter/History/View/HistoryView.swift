@@ -10,10 +10,16 @@ import SwiftUI
 
 
 struct HistoryView: View {
+//    @EnvironmentObject var homeVM: HomeViewModel
     var body: some View {
         VStack {
-            Text("History View")
+            List {
+//                ForEach(homeVM.vehicles)
+            }
         }
         .padding()
+        .onAppear {
+//            homeVM.fetchActiveVehicles()
+        }
     }
 }
