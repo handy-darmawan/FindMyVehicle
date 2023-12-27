@@ -9,15 +9,16 @@ import SwiftUI
 import MapKit
 
 struct MapKitViewRepresentable: UIViewRepresentable {
-    @Binding var location: CLLocationCoordinate2D
+    @EnvironmentObject var homeVM: HomeViewModel
     
     func makeUIView(context: Context) -> MapKitView {
-        let mapkitView = MapKitView()
-        return mapkitView
+        let mapKitView = MapKitView()
+        return mapKitView
         
     }
     func updateUIView(_ mapKitView: MapKitView, context: Context) {
-        mapKitView.setCurrentLocation(with: location)
+        mapKitView.setLocation(with: homeVM.coreLocationManager.location)
+        mapKitView.setHeading(with: homeVM.coreLocationManager.heading)
     }
 }
 

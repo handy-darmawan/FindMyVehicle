@@ -7,15 +7,18 @@
 
 import Foundation
 import CoreData
+import CoreLocation
 
 struct VehicleModel: Identifiable {
     var id: UUID = UUID()
     var name: String
     var latitude: Double
     var longitude: Double
+    var isActive: Bool
+    var date: Date
 }
 
-//map to entity
+//MARK: Map functions
 extension VehicleModel {
     func toEntity(context: NSManagedObjectContext) -> Vehicle {
         let vehicle = Vehicle(context: context)
@@ -23,6 +26,8 @@ extension VehicleModel {
         vehicle.name = name
         vehicle.latitude = latitude
         vehicle.longitude = longitude
+        vehicle.isActive = true
+        vehicle.date = Date()
         
         return vehicle
     }
@@ -32,18 +37,21 @@ extension VehicleModel {
             id: vehicle.id!,
             name: vehicle.name ?? "",
             latitude: vehicle.latitude,
-            longitude: vehicle.longitude
+            longitude: vehicle.longitude,
+            isActive: vehicle.isActive,
+            date: vehicle.date!
         )
     }
 }
 
+
+//MARK: Methods
 extension VehicleModel {
-    static var mockData: [VehicleModel] {
-        return [
-            VehicleModel(name: "Car", latitude: 0, longitude: 0),
-            VehicleModel(name: "Motorcycle", latitude: 0, longitude: 0),
-            VehicleModel(name: "Bicycle", latitude: 0, longitude: 0),
-            VehicleModel(name: "Scooter", latitude: 0, longitude: 0)
-        ]
+    func getDistance(from current: CLLocationCoordinate2D) -> String {
+        let vehicleLocation = CLLocation(latitude: latitude, longitude: longitude)
+        let currentLocation = CLLocation(latitude: current.latitude, longitude: current.longitude)
+        
+        let distance = vehicleLocation.distance(from: currentLocation)
+        return String(format: "%.2f", distance)
     }
 }

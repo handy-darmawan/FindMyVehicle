@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import CoreLocation
+import MapKit
 
 struct HomeView: View {
     @EnvironmentObject var homeVM: HomeViewModel
@@ -16,7 +17,7 @@ struct HomeView: View {
     var body: some View {
         TabView(selection: $homeVM.activeTab) {
             NavigationStack {
-                MapKitViewRepresentable(location: $homeVM.coreLocationManager.location)
+                MapKitViewRepresentable()
                     .ignoresSafeArea(edges: .top)
             }
             .tag(Tab.vehicle)
@@ -46,8 +47,6 @@ struct HomeView: View {
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-//                            print("Function to Add Vehicle")
-                            //trial to add data to coredata
                             homeVM.addVehicle(with: "data", location: CLLocationCoordinate2D(latitude: 10, longitude: 10))
                             print("saved")
                         }, label: {
