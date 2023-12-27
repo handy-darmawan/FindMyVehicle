@@ -14,6 +14,9 @@ extension TabView {
         if isActive {
             self.modifier(BottomSheetModifier(initialHeight: initialHeight, sheetCornerRadius: sheetCornerRadius, sheetView: sheetView()))            
         }
+        else {
+            self
+        }
     }
 }
 

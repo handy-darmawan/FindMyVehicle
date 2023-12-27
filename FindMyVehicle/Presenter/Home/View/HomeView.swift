@@ -13,7 +13,7 @@ import MapKit
 struct HomeView: View {
     @EnvironmentObject var homeVM: HomeViewModel
     @Environment(SceneDelegate.self) private var sceneDelegate
-    @State var vehicleName: String = ""
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         TabView(selection: $homeVM.activeTab) {
@@ -24,6 +24,7 @@ struct HomeView: View {
             .tag(Tab.vehicle)
             
             NavigationStack {
+                Text("ACTIVE TAB: \(homeVM.activeTab.title)")
                 HistoryView()
             }
             .tag(Tab.history)
@@ -34,14 +35,24 @@ struct HomeView: View {
                     if (homeVM.activeVehicle.isEmpty && homeVM.isAddVechileActive) || homeVM.isAddVechileActive {
                         VStack(alignment: .leading) {
                             Text("Vehicle Name")
-                                .font(.subheadline.bold())
+                                .font(.headline.bold())
                                 .padding(.top, 20)
-                            TextField("add your vehicle name", text: $vehicleName)
-                                .border(.black, width: 1)
-                                .background(.red.opacity(0.1))
+                            TextField("Your vehicle name", text: $homeVM.vehicleName)
+                                .padding(8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: 2)
+                                )
+                                .autocorrectionDisabled()
+                                .textInputAutocapitalization(.never)
+                                .onSubmit {
+                                    //add to coredata
+                                    homeVM.addVehicle()
+                                    homeVM.fetchActiveVehicles()
+                                }
                         }
                         .frame(alignment: .leading)
-                        .padding([.leading, .top], 20)
+                        .padding([.leading, .top, .trailing], 20)
                         Spacer()
                     }
                     else if homeVM.activeVehicle.isEmpty {
@@ -88,10 +99,8 @@ struct HomeView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         if homeVM.isAddVechileActive {
                             Button(action: {
-                                homeVM.isAddVechileActive.toggle()
-                                homeVM.addVehicle(with: vehicleName, location: homeVM.coreLocationManager.location)
+                                homeVM.addVehicle()
                                 homeVM.fetchActiveVehicles()
-                                vehicleName = ""
                             }, label: {
                                 Text("Done")
                             })
@@ -110,6 +119,8 @@ struct HomeView: View {
         .onAppear {
             guard sceneDelegate.tabWindow == nil else {return}
             sceneDelegate.addTabBar(homeVM)
+            
+            print(homeVM.activeTab)
             
             homeVM.coreDataManager.deleteBatch()
             //fetch data when view is loaded

@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 
 class HomeViewModel: ObservableObject {
+    
     @Published var coreDataManager: CoreDataManager = CoreDataManager.shared
     @Published var coreLocationManager: CoreLocationManager = CoreLocationManager.shared
     @Published var activeTab: Tab = .vehicle
@@ -16,10 +17,13 @@ class HomeViewModel: ObservableObject {
     @Published var vehicles: [VehicleModel] = []
     @Published var activeVehicle: [VehicleModel] = []
     @Published var isAddVechileActive: Bool = false
+    @Published var vehicleName: String = ""
     
-    func addVehicle(with name: String?, location: CLLocationCoordinate2D) {
-        let vehicle = VehicleModel(name: name ?? "", latitude: location.latitude, longitude: location.longitude, isActive: true, date: Date())
+    func addVehicle() {
+        isAddVechileActive.toggle()
+        let vehicle = VehicleModel(name: vehicleName, latitude: coreLocationManager.location.latitude, longitude: coreLocationManager.location.longitude, isActive: true, date: Date())
         coreDataManager.addVehicleLocation(vehicle: vehicle)
+        vehicleName = ""
     }
     
     func fetchVehicles() {

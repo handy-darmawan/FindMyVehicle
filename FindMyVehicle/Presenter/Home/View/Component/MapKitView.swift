@@ -57,6 +57,13 @@ extension MapKitView {
         mapView.camera.heading = heading.trueHeading
         mapView.setCamera(mapView.camera, animated: true)
     }
+    
+    func addPin(name: String, location: CLLocationCoordinate2D) {
+        let pin = MKPointAnnotation()
+        pin.title = name
+        pin.coordinate = location
+        mapView.addAnnotation(pin)
+    }
 }
 
 
