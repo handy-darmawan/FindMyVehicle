@@ -78,26 +78,12 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		8070C22F2B39AF9400B91A83 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		8070C2302B39AF9900B91A83 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				8070C2322B39AFFE00B91A83 /* HistoryView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		8070C2312B39AF9D00B91A83 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8082C04E2B35820E00BF38B6 = {
@@ -203,9 +189,7 @@
 		8082C0702B35A8A600BF38B6 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				8070C2312B39AF9D00B91A83 /* ViewModel */,
 				8070C2302B39AF9900B91A83 /* View */,
-				8070C22F2B39AF9400B91A83 /* Model */,
 			);
 			path = History;
 			sourceTree = "<group>";
