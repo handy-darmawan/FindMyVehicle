@@ -30,7 +30,7 @@ extension HomeView {
     }
 
     func trailingToolbarItem() -> some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
+        ToolbarItem(placement: .topBarTrailing) {
             if homeVM.isAddVechileActive {
                 toolBarActionButton("Done") {
                     homeVM.addVehicle()
@@ -46,6 +46,4 @@ extension HomeView {
             }
         }
     }
-    
 }
-

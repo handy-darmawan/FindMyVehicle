@@ -7,18 +7,53 @@
 
 import UIKit
 import MapKit
+import Combine
 
 class MapKitView: UIView, MKMapViewDelegate {
     var mapView: MKMapView!
     var region = MKCoordinateRegion()
+    var cancellable = Set<AnyCancellable>()
     
     init() {
         super.init(frame: .zero)
         setup()
+        
+        NotificationCenter.default.publisher(for: Notification.Name("AddPin"))
+            .sink { data in
+                let longitude = data.userInfo!["longitude"] as! Double
+                let latitude = data.userInfo!["latitude"] as! Double
+                let name = data.userInfo!["name"] as! String
+                
+                self.addPin(name: name, location: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+            }
+            .store(in: &cancellable)
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+//MARK: Delegate
+extension MapKitView {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        guard let annotation = annotation as? MKUserLocation else { return nil }
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let identifier = "CustomPin"
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        
+        annotationView.canShowCallout = true
+        annotationView.image = UIImage(systemName: "car.fill")
+        return annotationView
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(view.annotation?.title! ?? "TITLE")
     }
 }
 
@@ -30,7 +65,6 @@ extension MapKitView {
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .followWithHeading
-//        mapView.showsUserTrackingButton = true
         mapView.showsCompass = true
         mapView.showsScale = true
         
@@ -65,5 +99,3 @@ extension MapKitView {
         mapView.addAnnotation(pin)
     }
 }
-
-

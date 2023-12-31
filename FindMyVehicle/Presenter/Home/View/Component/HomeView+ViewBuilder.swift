@@ -1,5 +1,5 @@
 //
-//  HomeView+MethodExt.swift
+//  HomeView+ViewBuilder.swift
 //  FindMyVehicle
 //
 //  Created by ndyyy on 27/12/23.
@@ -10,7 +10,6 @@ import SwiftUI
 extension HomeView {
     @ViewBuilder
     func addVehicleFieldView(colorScheme: ColorScheme) -> some View {
-        
         VStack(alignment: .leading) {
             Text("Vehicle Name")
                 .font(.headline.bold())
@@ -26,6 +25,7 @@ extension HomeView {
                 .onSubmit {
                     //add to coredata
                     homeVM.addVehicle()
+                    
                     homeVM.fetchActiveVehicles()
                 }
         }
@@ -37,7 +37,7 @@ extension HomeView {
             textBuilder("No Active Vehicle", font: .title2, isBold: false)
         }
     }
-
+    
     @ViewBuilder
     func textBuilder(_ text: String, font: Font, isBold: Bool) -> some View {
         Text(text)
@@ -51,24 +51,38 @@ extension HomeView {
             VStack(spacing: 0) {
                 VehicleRowView(vehicle: vehicle)
             }
+            .contentShape(Rectangle())
             .padding([.vertical, .horizontal], 10)
+            .sheet(isPresented: $homeVM.isDetailViewClicked) {
+                DetailView(vehicle: vehicle)
+                    .presentationDetents([.medium, .fraction(0.99)])
+                    .presentationBackground(.ultraThickMaterial)
+                    .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+                    .interactiveDismissDisabled()
+            }
+            .onTapGesture {
+                homeVM.isDetailViewClicked.toggle()
+            }
         }
     }
-        
+    
     @ViewBuilder
     func showSheetContent() -> some View {
-        VScrollView() {
+        VStack {
             if (homeVM.activeVehicle.isEmpty && homeVM.isAddVechileActive) || homeVM.isAddVechileActive {
                 addVehicleFieldView(colorScheme: colorScheme)
                     .padding([.leading, .top, .trailing], 20)
                 Spacer()
             }
             else if homeVM.activeVehicle.isEmpty {
-               emptyVehicleView()
-                .frame(maxHeight: .infinity, alignment: .center)
+                emptyVehicleView()
+                    .frame(maxHeight: .infinity, alignment: .center)
             }
             else {
                 showAllVehicleView()
+                    .onAppear {
+                        homeVM.addPin()
+                    }
                 Spacer()
             }
         }

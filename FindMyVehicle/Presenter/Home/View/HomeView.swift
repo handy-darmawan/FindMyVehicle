@@ -26,7 +26,7 @@ struct HomeView: View {
             }
             .tag(Tab.history)
         }
-        .tabSheet(initialHeight: 110, isActive: homeVM.activeTab == .vehicle) {
+        .tabSheet(initialHeight: homeVM.sheetHeight, isActive: homeVM.activeTab == .vehicle) {
             NavigationStack {
                 showSheetContent()
                 .scrollIndicators(.hidden)
@@ -44,9 +44,6 @@ struct HomeView: View {
         .onAppear {
             guard sceneDelegate.tabWindow == nil else {return}
             sceneDelegate.addTabBar(homeVM)
-            
-            //fetch data when view is loaded
-//            homeVM.coreDataManager.deleteBatch()
             homeVM.fetchActiveVehicles()
         }
     }
@@ -56,3 +53,21 @@ struct HomeView: View {
     HomeView()
 }
 
+
+func testing() {
+    @EnvironmentObject var homeVM: HomeViewModel
+    
+   homeVM.coreDataManager.deleteBatch()
+
+   DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+       //add dummy location
+       homeVM.vehicleName = "Location1"
+       homeVM.coreLocationManager.location = CLLocationCoordinate2D(latitude: -6.1356004, longitude: 106.7824644)
+       homeVM.addVehicle()
+
+       //            homeVM.addVehicle() (vehicle: VehicleModel(name: "Location1", latitude: -6.1356004, longitude: 106.7824644, isActive: true, date: Date()))
+       homeVM.vehicleName = "Location2"
+       homeVM.coreLocationManager.location = CLLocationCoordinate2D(latitude: -6.1355265, longitude: 106.7824142)
+       homeVM.addVehicle()
+   }
+}
