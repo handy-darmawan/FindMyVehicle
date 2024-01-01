@@ -10,24 +10,23 @@ import SwiftUI
 
 
 struct HistoryView: View {
-    @EnvironmentObject var homeVM: HomeViewModel
+    @EnvironmentObject var historyVM: HistoryViewModel
     var body: some View {
         VStack {
-            if homeVM.vehicles.isEmpty {
+            if historyVM.vehicles.isEmpty {
                 Text("No History")
                     .font(.title2)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
             else {
+                Text("Last Parked Vehicle")
+                    .font(.title2.bold())
+                    .frame(maxWidth: .infinity, alignment: .center)
                 List {
-                    ForEach(homeVM.vehicles, id: \.id) { vehicle in
+                    ForEach(historyVM.vehicles, id: \.id) { vehicle in
                         HStack {
-                            Image(systemName: "car.fill")
-                                .font(.title2)
-                                .background(.background, in: Circle())
-                            
                             Text(vehicle.name)
-                                .font(.title2.bold())
+                                .font(.title3)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Text(vehicle.date, style: .date)
@@ -40,7 +39,9 @@ struct HistoryView: View {
         }
         .padding()
         .onAppear {
-            homeVM.fetchVehicles()
+            Task {
+                await historyVM.fetchVehicles()
+            }
         }
     }
 }

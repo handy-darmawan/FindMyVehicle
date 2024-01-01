@@ -9,18 +9,14 @@ import Foundation
 import CoreLocation
 import Combine
 
-protocol CoreDataFunctionProtocol {
-    func addVehicle()
-    func fetchVehicles()
-    func fetchActiveVehicles()
-    func deleteAllVehicles()
-}
-
+@MainActor
 class HomeViewModel: ObservableObject {
     
     @Published var coreDataManager: CoreDataManager = CoreDataManager.shared
     @Published var coreLocationManager: CoreLocationManager = CoreLocationManager.shared
     @Published var activeTab: Tab = .vehicle
+    
+    @Published var historyVM = HistoryViewModel()
     
     @Published var vehicles: [VehicleModel] = []
     @Published var activeVehicle: [VehicleModel] = []
@@ -29,28 +25,35 @@ class HomeViewModel: ObservableObject {
     
     @Published var sheetHeight: CGFloat = 110
     @Published var isDetailViewClicked: Bool = false //must be move to detailvm (?)
+ 
     
+    var getAllVehicleUseCase = GetAllVehicleUseCase()
+    var addVehicleUseCase = AddVehicleUseCase()
 }
 
-extension HomeViewModel: CoreDataFunctionProtocol {
-    func addVehicle() {
+extension HomeViewModel {
+    func fetchVehicles() async {
+        do {
+            vehicles = try await getAllVehicleUseCase.execute()
+        }
+        catch {
+            print("Error when fetch vehicles")
+            vehicles = []
+        }
+    }
+}
+
+extension HomeViewModel {
+    func addVehicle() async {
         isAddVechileActive.toggle()
         let vehicle = VehicleModel(name: vehicleName, latitude: coreLocationManager.location.latitude, longitude: coreLocationManager.location.longitude, isActive: true, date: Date())
-        coreDataManager.addVehicleLocation(vehicle: vehicle)
+        await addVehicleUseCase.execute(vehicle: vehicle)
         vehicleName = ""
     }
     
-    func fetchVehicles() {
-        vehicles = coreDataManager.fetchAllVehicleLocation()
-    }
-    
-    func fetchActiveVehicles() {
-        fetchVehicles()
+    func fetchActiveVehicles() async {
+        await fetchVehicles()
         activeVehicle = vehicles.filter({ return $0.isActive == true })
-    }
-    
-    func deleteAllVehicles() {
-        coreDataManager.deleteBatch()
     }
 }
 

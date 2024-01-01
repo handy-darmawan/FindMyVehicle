@@ -23,10 +23,10 @@ extension HomeView {
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
                 .onSubmit {
-                    //add to coredata
-                    homeVM.addVehicle()
-                    
-                    homeVM.fetchActiveVehicles()
+                    Task {
+                        await homeVM.addVehicle()
+                        await homeVM.fetchActiveVehicles()
+                    }
                 }
         }
     }
@@ -68,7 +68,7 @@ extension HomeView {
     
     @ViewBuilder
     func showSheetContent() -> some View {
-        VStack {
+        ScrollView {
             if (homeVM.activeVehicle.isEmpty && homeVM.isAddVechileActive) || homeVM.isAddVechileActive {
                 addVehicleFieldView(colorScheme: colorScheme)
                     .padding([.leading, .top, .trailing], 20)

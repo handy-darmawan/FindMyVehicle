@@ -8,9 +8,11 @@
 import Foundation
 import CoreLocation
 
+//geofence
 
 class CoreLocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var location = CLLocationCoordinate2D()
+//    @Published var location = CLLocationCoordinate2D(latitude: -6.1356004, longitude: 106.7824644)
     @Published var heading: CLHeading?
     
     static let shared = CoreLocationManager()
@@ -26,10 +28,17 @@ class CoreLocationManager: NSObject, CLLocationManagerDelegate, ObservableObject
         locationManager.startUpdatingHeading()
     }
     
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locations.last.map {
             location = $0.coordinate
         }
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("did enter region")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
