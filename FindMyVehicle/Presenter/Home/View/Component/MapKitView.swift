@@ -39,7 +39,6 @@ class MapKitView: UIView, MKMapViewDelegate {
 //MARK: Delegate
 extension MapKitView {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        guard let annotation = annotation as? MKUserLocation else { return nil }
         if annotation is MKUserLocation {
             return nil
         }

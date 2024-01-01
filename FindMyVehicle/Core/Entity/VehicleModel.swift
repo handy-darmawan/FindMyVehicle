@@ -18,7 +18,7 @@ struct VehicleModel: Identifiable {
     var date: Date
 }
 
-//MARK: Map functions
+//MARK: Mapper function
 extension VehicleModel {
     func toEntity(context: NSManagedObjectContext) -> Vehicle {
         let vehicle = Vehicle(context: context)

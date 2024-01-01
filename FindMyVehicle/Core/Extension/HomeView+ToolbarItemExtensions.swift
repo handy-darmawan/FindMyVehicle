@@ -33,8 +33,10 @@ extension HomeView {
         ToolbarItem(placement: .topBarTrailing) {
             if homeVM.isAddVechileActive {
                 toolBarActionButton("Done") {
-                    homeVM.addVehicle()
-                    homeVM.fetchActiveVehicles()
+                    Task {
+                        await homeVM.addVehicle()
+                        await homeVM.fetchActiveVehicles()
+                    }
                 }
             }
             else {

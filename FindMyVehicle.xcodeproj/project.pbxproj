@@ -20,6 +20,11 @@
 		8082C0742B35CB5100BF38B6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082C0732B35CB5100BF38B6 /* CoreDataManager.swift */; };
 		8082C0772B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8082C0752B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld */; };
 		8082C07A2B35D79600BF38B6 /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082C0792B35D79600BF38B6 /* CoreLocationManager.swift */; };
+		8096A4752B4298890015AE2B /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096A4742B4298890015AE2B /* HistoryViewModel.swift */; };
+		8096A47E2B42A5570015AE2B /* VehicleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096A47D2B42A5570015AE2B /* VehicleDataSource.swift */; };
+		8096A4862B42B7FF0015AE2B /* GetAllVehicleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096A4852B42B7FF0015AE2B /* GetAllVehicleUseCase.swift */; };
+		8096A4882B42BB7A0015AE2B /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096A4872B42BB7A0015AE2B /* CoreDataRepository.swift */; };
+		8096A48A2B42BD420015AE2B /* AddVehicleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096A4892B42BD420015AE2B /* AddVehicleUseCase.swift */; };
 		80D0BECD2B3B114A0027CC3A /* TabEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BECC2B3B114A0027CC3A /* TabEnum.swift */; };
 		80D0BECF2B3B129D0027CC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BECE2B3B129D0027CC3A /* AppDelegate.swift */; };
 		80D0BED12B3B12A10027CC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED02B3B12A10027CC3A /* SceneDelegate.swift */; };
@@ -28,7 +33,7 @@
 		80D0BED72B3B1C920027CC3A /* VehicleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */; };
 		80DAFA192B3C5FF30005A51F /* HomeView+ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DAFA182B3C5FF30005A51F /* HomeView+ViewBuilder.swift */; };
 		80DAFA1B2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DAFA1A2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift */; };
-		80FD0A942B392CC9006C5709 /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD0A932B392CC9006C5709 /* CoreDataProtocol.swift */; };
+		80FD0A942B392CC9006C5709 /* VehicleDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD0A932B392CC9006C5709 /* VehicleDataSourceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,11 @@
 		8082C0762B35D2F300BF38B6 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		8082C0792B35D79600BF38B6 /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		8082C07B2B35DE6400BF38B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8096A4742B4298890015AE2B /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		8096A47D2B42A5570015AE2B /* VehicleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataSource.swift; sourceTree = "<group>"; };
+		8096A4852B42B7FF0015AE2B /* GetAllVehicleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllVehicleUseCase.swift; sourceTree = "<group>"; };
+		8096A4872B42BB7A0015AE2B /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		8096A4892B42BD420015AE2B /* AddVehicleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleUseCase.swift; sourceTree = "<group>"; };
 		80D0BECC2B3B114A0027CC3A /* TabEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabEnum.swift; sourceTree = "<group>"; };
 		80D0BECE2B3B129D0027CC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D0BED02B3B12A10027CC3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +65,7 @@
 		80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRowView.swift; sourceTree = "<group>"; };
 		80DAFA182B3C5FF30005A51F /* HomeView+ViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+ViewBuilder.swift"; sourceTree = "<group>"; };
 		80DAFA1A2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+ToolbarItemExtensions.swift"; sourceTree = "<group>"; };
-		80FD0A932B392CC9006C5709 /* CoreDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
+		80FD0A932B392CC9006C5709 /* VehicleDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataSourceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +85,8 @@
 				8023F6972B370B3200F3EED2 /* MapKitView.swift */,
 				806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */,
 				80D0BED22B3B14810027CC3A /* CustomTabBar.swift */,
-				80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */,
 				80D0BED62B3B1C920027CC3A /* VehicleRowView.swift */,
 				80DAFA182B3C5FF30005A51F /* HomeView+ViewBuilder.swift */,
-				80DAFA1A2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -131,10 +139,6 @@
 				8082C06D2B35971A00BF38B6 /* Core */,
 				8082C06C2B35970F00BF38B6 /* Data */,
 				8082C06B2B35891200BF38B6 /* Presenter */,
-				8082C05A2B35820E00BF38B6 /* FindMyVehicleApp.swift */,
-				80D0BECE2B3B129D0027CC3A /* AppDelegate.swift */,
-				80D0BED02B3B12A10027CC3A /* SceneDelegate.swift */,
-				8082C05E2B35820F00BF38B6 /* Assets.xcassets */,
 				8082C0602B35820F00BF38B6 /* Preview Content */,
 			);
 			path = FindMyVehicle;
@@ -155,15 +159,6 @@
 				8082C05C2B35820E00BF38B6 /* HomeView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		8082C0692B35890800BF38B6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				806BD0E02B38957F0099B6DE /* VehicleModel.swift */,
-				80D0BECC2B3B114A0027CC3A /* TabEnum.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		8082C06A2B35890D00BF38B6 /* ViewModel */ = {
@@ -187,6 +182,8 @@
 		8082C06C2B35970F00BF38B6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8096A4822B42ABE00015AE2B /* Repository */,
+				8096A4812B42ABD30015AE2B /* DataSource */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -194,8 +191,12 @@
 		8082C06D2B35971A00BF38B6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8082C0782B35D78900BF38B6 /* CoreLocation */,
-				8082C0722B35CB4100BF38B6 /* CoreData */,
+				8096A47C2B42A14B0015AE2B /* Entity */,
+				8096A47B2B42A0FF0015AE2B /* Enum */,
+				8096A47A2B42A01E0015AE2B /* Resource */,
+				8096A4792B429FEB0015AE2B /* Application */,
+				8096A4782B429FE30015AE2B /* Extension */,
+				8096A4762B429FDC0015AE2B /* Service */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -203,7 +204,8 @@
 		8082C06E2B35971D00BF38B6 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				80FD0A932B392CC9006C5709 /* CoreDataProtocol.swift */,
+				8096A48B2B42C17A0015AE2B /* Protocol */,
+				8096A4832B42ABF00015AE2B /* Use case */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 		8082C0702B35A8A600BF38B6 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				8096A4732B4298790015AE2B /* ViewModel */,
 				8070C2302B39AF9900B91A83 /* View */,
 			);
 			path = History;
@@ -220,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				8082C0682B35886B00BF38B6 /* View */,
-				8082C0692B35890800BF38B6 /* Model */,
 				8082C06A2B35890D00BF38B6 /* ViewModel */,
 			);
 			path = Home;
@@ -241,6 +243,107 @@
 				8082C0792B35D79600BF38B6 /* CoreLocationManager.swift */,
 			);
 			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		8096A4732B4298790015AE2B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8096A4742B4298890015AE2B /* HistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8096A4762B429FDC0015AE2B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8082C0782B35D78900BF38B6 /* CoreLocation */,
+				8082C0722B35CB4100BF38B6 /* CoreData */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8096A4782B429FE30015AE2B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				80D0BED42B3B19910027CC3A /* TabView+TabSheet.swift */,
+				80DAFA1A2B3C75060005A51F /* HomeView+ToolbarItemExtensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8096A4792B429FEB0015AE2B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				80D0BECE2B3B129D0027CC3A /* AppDelegate.swift */,
+				80D0BED02B3B12A10027CC3A /* SceneDelegate.swift */,
+				8082C05A2B35820E00BF38B6 /* FindMyVehicleApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8096A47A2B42A01E0015AE2B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8082C05E2B35820F00BF38B6 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8096A47B2B42A0FF0015AE2B /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				80D0BECC2B3B114A0027CC3A /* TabEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		8096A47C2B42A14B0015AE2B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				806BD0E02B38957F0099B6DE /* VehicleModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8096A4802B42A5920015AE2B /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				8096A47D2B42A5570015AE2B /* VehicleDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		8096A4812B42ABD30015AE2B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				8096A4802B42A5920015AE2B /* Local */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		8096A4822B42ABE00015AE2B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8096A4872B42BB7A0015AE2B /* CoreDataRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8096A4832B42ABF00015AE2B /* Use case */ = {
+			isa = PBXGroup;
+			children = (
+				8096A4852B42B7FF0015AE2B /* GetAllVehicleUseCase.swift */,
+				8096A4892B42BD420015AE2B /* AddVehicleUseCase.swift */,
+			);
+			path = "Use case";
+			sourceTree = "<group>";
+		};
+		8096A48B2B42C17A0015AE2B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				80FD0A932B392CC9006C5709 /* VehicleDataSourceProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +416,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80FD0A942B392CC9006C5709 /* CoreDataProtocol.swift in Sources */,
+				80FD0A942B392CC9006C5709 /* VehicleDataSourceProtocol.swift in Sources */,
+				8096A4862B42B7FF0015AE2B /* GetAllVehicleUseCase.swift in Sources */,
 				80D0BED32B3B14810027CC3A /* CustomTabBar.swift in Sources */,
+				8096A48A2B42BD420015AE2B /* AddVehicleUseCase.swift in Sources */,
 				80D0BED12B3B12A10027CC3A /* SceneDelegate.swift in Sources */,
 				8023F6982B370B3200F3EED2 /* MapKitView.swift in Sources */,
 				806BD0DD2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift in Sources */,
@@ -323,15 +428,18 @@
 				806BD0DF2B3890420099B6DE /* HomeViewModel.swift in Sources */,
 				8070C2332B39AFFE00B91A83 /* HistoryView.swift in Sources */,
 				8082C05D2B35820E00BF38B6 /* HomeView.swift in Sources */,
+				8096A4882B42BB7A0015AE2B /* CoreDataRepository.swift in Sources */,
 				802ED54C2B415C1800DDCDC9 /* DetailView.swift in Sources */,
 				8082C07A2B35D79600BF38B6 /* CoreLocationManager.swift in Sources */,
 				80D0BECF2B3B129D0027CC3A /* AppDelegate.swift in Sources */,
 				8082C0772B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld in Sources */,
 				80D0BED72B3B1C920027CC3A /* VehicleRowView.swift in Sources */,
 				80DAFA192B3C5FF30005A51F /* HomeView+ViewBuilder.swift in Sources */,
+				8096A4752B4298890015AE2B /* HistoryViewModel.swift in Sources */,
 				80D0BECD2B3B114A0027CC3A /* TabEnum.swift in Sources */,
 				806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */,
 				80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */,
+				8096A47E2B42A5570015AE2B /* VehicleDataSource.swift in Sources */,
 				8082C05B2B35820E00BF38B6 /* FindMyVehicleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
