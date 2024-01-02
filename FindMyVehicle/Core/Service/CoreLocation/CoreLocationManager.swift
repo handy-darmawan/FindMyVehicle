@@ -45,7 +45,6 @@ class CoreLocationManager: NSObject, CLLocationManagerDelegate, ObservableObject
             print("User allowed when in use")
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.startUpdatingLocation()
-            locationManager.startUpdatingHeading()
         @unknown default:
             print("default")
         }
@@ -59,12 +58,6 @@ class CoreLocationManager: NSObject, CLLocationManagerDelegate, ObservableObject
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         guard region is CLCircularRegion else { return }
         print("did exit region")
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        if newHeading.headingAccuracy < 0 { return }
-        let heading = (newHeading.trueHeading > 0) ? newHeading.trueHeading : newHeading.magneticHeading
-        NotificationCenter.default.post(name: NSNotification.Name("Heading"), object: nil, userInfo: ["heading": heading])
     }
 }
 

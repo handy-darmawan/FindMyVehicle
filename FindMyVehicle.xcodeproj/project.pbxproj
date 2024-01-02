@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80142F472B44566600DBAD1B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80142F462B44566600DBAD1B /* File.swift */; };
 		8023F6982B370B3200F3EED2 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023F6972B370B3200F3EED2 /* MapKitView.swift */; };
 		802ED54C2B415C1800DDCDC9 /* DetailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802ED54B2B415C1700DDCDC9 /* DetailSheetView.swift */; };
 		806BD0DD2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80142F462B44566600DBAD1B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8023F6972B370B3200F3EED2 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
 		802ED54B2B415C1700DDCDC9 /* DetailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSheetView.swift; sourceTree = "<group>"; };
 		8032CF0E2B4406D600C33C8A /* SimulateLoc.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulateLoc.gpx; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				8082C0792B35D79600BF38B6 /* CoreLocationManager.swift */,
-				80142F462B44566600DBAD1B /* File.swift */,
 			);
 			path = CoreLocation;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				80D0BECD2B3B114A0027CC3A /* TabEnum.swift in Sources */,
 				806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */,
 				80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */,
-				80142F472B44566600DBAD1B /* File.swift in Sources */,
 				8096A47E2B42A5570015AE2B /* VehicleDataSource.swift in Sources */,
 				8082C05B2B35820E00BF38B6 /* FindMyVehicleApp.swift in Sources */,
 			);

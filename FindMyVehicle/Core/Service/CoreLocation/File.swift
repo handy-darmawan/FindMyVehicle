@@ -35,7 +35,7 @@ class HeadingView: UIView {
             headingArcLayer = CAShapeLayer()
             headingArcLayer.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
             
-            let gradientLayer = CAGradientLayer()
+            
             gradientLayer.type = .radial
             gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
