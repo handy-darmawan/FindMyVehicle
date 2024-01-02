@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80142F472B44566600DBAD1B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80142F462B44566600DBAD1B /* File.swift */; };
 		8023F6982B370B3200F3EED2 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023F6972B370B3200F3EED2 /* MapKitView.swift */; };
-		802ED54C2B415C1800DDCDC9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802ED54B2B415C1700DDCDC9 /* DetailView.swift */; };
+		802ED54C2B415C1800DDCDC9 /* DetailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802ED54B2B415C1700DDCDC9 /* DetailSheetView.swift */; };
 		806BD0DD2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */; };
 		806BD0DF2B3890420099B6DE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0DE2B3890420099B6DE /* HomeViewModel.swift */; };
 		806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806BD0E02B38957F0099B6DE /* VehicleModel.swift */; };
@@ -37,8 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80142F462B44566600DBAD1B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8023F6972B370B3200F3EED2 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
-		802ED54B2B415C1700DDCDC9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		802ED54B2B415C1700DDCDC9 /* DetailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSheetView.swift; sourceTree = "<group>"; };
+		8032CF0E2B4406D600C33C8A /* SimulateLoc.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulateLoc.gpx; sourceTree = "<group>"; };
 		806BD0DC2B386BEE0099B6DE /* MapKitView+UIRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKitView+UIRepresentable.swift"; sourceTree = "<group>"; };
 		806BD0DE2B3890420099B6DE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		806BD0E02B38957F0099B6DE /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
@@ -91,22 +94,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		802ED5492B415BFD00DDCDC9 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				802ED54A2B415C0C00DDCDC9 /* View */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		802ED54A2B415C0C00DDCDC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				802ED54B2B415C1700DDCDC9 /* DetailView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8070C2302B39AF9900B91A83 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +144,8 @@
 			children = (
 				8023F6992B370C9A00F3EED2 /* Component */,
 				8082C05C2B35820E00BF38B6 /* HomeView.swift */,
+				802ED54B2B415C1700DDCDC9 /* DetailSheetView.swift */,
+				8032CF0E2B4406D600C33C8A /* SimulateLoc.gpx */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,7 +161,6 @@
 		8082C06B2B35891200BF38B6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				802ED5492B415BFD00DDCDC9 /* Detail */,
 				8082C0712B35A8A700BF38B6 /* Home */,
 				8082C0702B35A8A600BF38B6 /* History */,
 			);
@@ -241,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				8082C0792B35D79600BF38B6 /* CoreLocationManager.swift */,
+				80142F462B44566600DBAD1B /* File.swift */,
 			);
 			path = CoreLocation;
 			sourceTree = "<group>";
@@ -429,7 +418,7 @@
 				8070C2332B39AFFE00B91A83 /* HistoryView.swift in Sources */,
 				8082C05D2B35820E00BF38B6 /* HomeView.swift in Sources */,
 				8096A4882B42BB7A0015AE2B /* CoreDataRepository.swift in Sources */,
-				802ED54C2B415C1800DDCDC9 /* DetailView.swift in Sources */,
+				802ED54C2B415C1800DDCDC9 /* DetailSheetView.swift in Sources */,
 				8082C07A2B35D79600BF38B6 /* CoreLocationManager.swift in Sources */,
 				80D0BECF2B3B129D0027CC3A /* AppDelegate.swift in Sources */,
 				8082C0772B35D2F300BF38B6 /* VehicleCoreData.xcdatamodeld in Sources */,
@@ -439,6 +428,7 @@
 				80D0BECD2B3B114A0027CC3A /* TabEnum.swift in Sources */,
 				806BD0E12B38957F0099B6DE /* VehicleModel.swift in Sources */,
 				80D0BED52B3B19910027CC3A /* TabView+TabSheet.swift in Sources */,
+				80142F472B44566600DBAD1B /* File.swift in Sources */,
 				8096A47E2B42A5570015AE2B /* VehicleDataSource.swift in Sources */,
 				8082C05B2B35820E00BF38B6 /* FindMyVehicleApp.swift in Sources */,
 			);

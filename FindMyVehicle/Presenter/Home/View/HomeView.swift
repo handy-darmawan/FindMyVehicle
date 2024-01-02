@@ -30,16 +30,16 @@ struct HomeView: View {
         .tabSheet(initialHeight: homeVM.sheetHeight, isActive: homeVM.activeTab == .vehicle) {
             NavigationStack {
                 showSheetContent()
-                .scrollIndicators(.hidden)
-                .scrollContentBackground(.hidden)
-                .toolbar {
-                    if homeVM.isAddVechileActive {
-                        addNewVehicleToolbarItem()
+                    .scrollIndicators(.hidden)
+                    .scrollContentBackground(.hidden)
+                    .toolbar {
+                        if homeVM.isAddVechileActive {
+                            addNewVehicleToolbarItem()
+                        }
+                        
+                        leadingToolbarItem()
+                        trailingToolbarItem()
                     }
-                    
-                    leadingToolbarItem()
-                    trailingToolbarItem()
-                }
             }
         }
         .onAppear {

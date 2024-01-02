@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             CustomTabBar()
             .environmentObject(homeVM)
             .frame(maxHeight: .infinity, alignment: .bottom)
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         )
         
         tabBarController.view.backgroundColor = .clear

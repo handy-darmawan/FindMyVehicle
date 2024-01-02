@@ -34,7 +34,7 @@ extension HomeView {
     @ViewBuilder
     func emptyVehicleView() -> some View {
         VStack {
-            textBuilder("No Active Vehicle", font: .title2, isBold: false)
+            textBuilder("No Active Vehicle", font: .title3, isBold: false)
         }
     }
     
@@ -54,13 +54,15 @@ extension HomeView {
             .contentShape(Rectangle())
             .padding([.vertical, .horizontal], 10)
             .sheet(isPresented: $homeVM.isDetailViewClicked) {
-                DetailView(vehicle: vehicle)
+                DetailSheetView()
+                    .environmentObject(homeVM)
                     .presentationDetents([.medium, .fraction(0.99)])
                     .presentationBackground(.ultraThickMaterial)
                     .presentationBackgroundInteraction(.enabled(upThrough: .medium))
                     .interactiveDismissDisabled()
             }
             .onTapGesture {
+                homeVM.currentVehicle = vehicle
                 homeVM.isDetailViewClicked.toggle()
             }
         }
@@ -76,7 +78,6 @@ extension HomeView {
             }
             else if homeVM.activeVehicle.isEmpty {
                 emptyVehicleView()
-                    .frame(maxHeight: .infinity, alignment: .center)
             }
             else {
                 showAllVehicleView()

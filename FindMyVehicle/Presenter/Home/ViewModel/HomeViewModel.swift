@@ -11,8 +11,6 @@ import Combine
 
 @MainActor
 class HomeViewModel: ObservableObject {
-    
-    @Published var coreDataManager: CoreDataManager = CoreDataManager.shared
     @Published var coreLocationManager: CoreLocationManager = CoreLocationManager.shared
     @Published var activeTab: Tab = .vehicle
     
@@ -24,15 +22,15 @@ class HomeViewModel: ObservableObject {
     @Published var vehicleName: String = ""
     
     @Published var sheetHeight: CGFloat = 110
-    @Published var isDetailViewClicked: Bool = false //must be move to detailvm (?)
- 
+    @Published var isDetailViewClicked: Bool = false
+    @Published var currentVehicle: VehicleModel!
     
     var getAllVehicleUseCase = GetAllVehicleUseCase()
     var addVehicleUseCase = AddVehicleUseCase()
 }
 
 extension HomeViewModel {
-    func fetchVehicles() async {
+    private func fetchVehicles() async {
         do {
             vehicles = try await getAllVehicleUseCase.execute()
         }
@@ -41,9 +39,7 @@ extension HomeViewModel {
             vehicles = []
         }
     }
-}
-
-extension HomeViewModel {
+    
     func addVehicle() async {
         isAddVechileActive.toggle()
         let vehicle = VehicleModel(name: vehicleName, latitude: coreLocationManager.location.latitude, longitude: coreLocationManager.location.longitude, isActive: true, date: Date())

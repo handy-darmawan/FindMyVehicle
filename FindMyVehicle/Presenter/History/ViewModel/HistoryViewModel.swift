@@ -7,9 +7,9 @@
 
 import Foundation
 
+@MainActor
 class HistoryViewModel: ObservableObject {
     
-    @Published var coreDataManager: CoreDataManager = CoreDataManager.shared
     @Published var vehicles: [VehicleModel] = []
     
     var getAllVehicleUseCase = GetAllVehicleUseCase()

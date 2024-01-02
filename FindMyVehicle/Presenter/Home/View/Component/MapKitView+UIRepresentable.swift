@@ -18,7 +18,7 @@ struct MapKitViewRepresentable: UIViewRepresentable {
     }
     func updateUIView(_ mapKitView: MapKitView, context: Context) {
         mapKitView.setLocation(with: homeVM.coreLocationManager.location)
-        mapKitView.setHeading(with: homeVM.coreLocationManager.heading)
+//        mapKitView.setHeading(with: homeVM.coreLocationManager.heading)
     }
 }
 
